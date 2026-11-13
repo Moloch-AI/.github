@@ -19,7 +19,7 @@
 
 ---
 
-MolochAI is a developer API for open-weight language models. You send OpenAI-format requests to one base URL, choose a model by id, and get plan-based token quotas with published limits. This organization holds the open-source tools for building on it: SDKs, a terminal client, a browser playground, runnable examples, the HTTP contract, and a mock server so you can develop and run CI without a key or quota.
+MolochAI is a developer API for open-weight language models. You send OpenAI-format requests to one base URL, choose a model by id, and pay with prepaid credit charged per request or a monthly plan with a token quota, under published limits. This organization holds the open-source tools for building on it: SDKs, a terminal client, a browser playground, runnable examples, the HTTP contract, and a mock server so you can develop and run CI without a key or quota.
 
 Everything here is MIT-licensed.
 
@@ -31,9 +31,9 @@ Everything here is MIT-licensed.
 | Call the API from Python, sync or async, with typed errors | [uncensored-ai-python](https://github.com/Moloch-AI/uncensored-ai-python) |
 | Call the API from TypeScript or Node, with zero runtime dependencies | [uncensored-ai-node](https://github.com/Moloch-AI/uncensored-ai-node) |
 | Chat with the models from a terminal | [uncensored-ai-cli](https://github.com/Moloch-AI/uncensored-ai-cli) |
-| Try models in a browser while the key stays on your server | [ai-model-playground](https://github.com/Moloch-AI/ai-model-playground) |
-| Copy a working example for a specific task | [uncensored-llm-examples](https://github.com/Moloch-AI/uncensored-llm-examples) |
-| Integrate over plain HTTP, read the OpenAPI spec, or test offline | [uncensored-ai-api](https://github.com/Moloch-AI/uncensored-ai-api) |
+| Try models in a browser while the key stays on your server (also as a Docker image you build) | [ai-model-playground](https://github.com/Moloch-AI/ai-model-playground) |
+| Copy a working example for a task, or for LangChain, LiteLLM or the Vercel AI SDK | [uncensored-llm-examples](https://github.com/Moloch-AI/uncensored-llm-examples) |
+| Integrate over plain HTTP, import the OpenAPI spec or Postman collection, or test offline | [uncensored-ai-api](https://github.com/Moloch-AI/uncensored-ai-api) |
 
 ## Quickstart
 
@@ -51,7 +51,7 @@ curl https://api.molochai.dev/api/v1/chat/completions \
 With the Python SDK:
 
 ```bash
-pip install "git+https://github.com/Moloch-AI/uncensored-ai-python@v0.1.1"
+pip install "git+https://github.com/Moloch-AI/uncensored-ai-python@v0.1.2"
 ```
 
 ```python
@@ -68,6 +68,15 @@ for text in stream.text_deltas():
 ```
 
 Already using an OpenAI SDK? Point it at `https://api.molochai.dev/api/v1` with your MolochAI key, and read the [compatibility notes](https://molochai.dev/docs/openai-compatibility?utm_source=github&utm_medium=oss&utm_campaign=org-profile) for the parameters that are ignored or overridden.
+
+## Integrations
+
+| Where you work | What to use |
+| --- | --- |
+| Official OpenAI SDKs (Python, JavaScript) | Change the base URL and the model id. [Examples](https://github.com/Moloch-AI/uncensored-llm-examples) cover streaming, tools, JSON output and every error shape. |
+| LangChain, LiteLLM, Vercel AI SDK | Tested examples in [uncensored-llm-examples](https://github.com/Moloch-AI/uncensored-llm-examples), with the defaults each one gets wrong here (structured output, retries, stream errors). |
+| Postman, Insomnia, Bruno, Hoppscotch | The [Postman collection](https://github.com/Moloch-AI/uncensored-ai-api/tree/main/postman) or the [OpenAPI spec](https://github.com/Moloch-AI/uncensored-ai-api/blob/main/openapi.yaml). |
+| SillyTavern, Open WebUI, LibreChat, coding agents (Cline, Roo Code, Continue, Aider) | Setup guides on [molochai.dev/integrations](https://molochai.dev/integrations?utm_source=github&utm_medium=oss&utm_campaign=org-profile). |
 
 ## How the pieces fit
 
@@ -88,7 +97,7 @@ Already using an OpenAI SDK? Point it at `https://api.molochai.dev/api/v1` with 
 | `GET /models` | Model ids, display names, and whether a server is serving each one right now. |
 | `GET /api/auth/me` | Your plan, credit, and the context limit you get on each model. |
 
-- Rate limit: 60 requests per minute per account, plus plan-based session and monthly quotas. See [limits](https://molochai.dev/docs/api-reference?utm_source=github&utm_medium=oss&utm_campaign=org-profile#limits) and [errors](https://molochai.dev/docs/errors?utm_source=github&utm_medium=oss&utm_campaign=org-profile).
+- Rate limit: 60 requests per minute per account, plus a 5-hour session cap and, on monthly plans, the plan's quota. See [limits](https://molochai.dev/docs/api-reference?utm_source=github&utm_medium=oss&utm_campaign=org-profile#limits) and [errors](https://molochai.dev/docs/errors?utm_source=github&utm_medium=oss&utm_campaign=org-profile).
 - Not available: embeddings, image generation, audio, files, the Responses API, and JSON mode (`response_format` is ignored, so ask for JSON in the prompt and validate it).
 - Stream long replies. Plain requests that run past about 100 seconds can time out at the edge.
 
