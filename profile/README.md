@@ -51,7 +51,7 @@ curl https://api.molochai.dev/api/v1/chat/completions \
 With the Python SDK:
 
 ```bash
-pip install "git+https://github.com/Moloch-AI/uncensored-ai-python@v0.1.0"
+pip install "git+https://github.com/Moloch-AI/uncensored-ai-python@v0.1.1"
 ```
 
 ```python
