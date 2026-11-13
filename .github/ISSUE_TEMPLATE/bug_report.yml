@@ -1,0 +1,51 @@
+name: Bug report
+description: Something in this repository does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting. **Never paste an API key**, and redact prompts you do not want public.
+        Problems with your account, billing or the hosted API belong at https://molochai.dev/contact, not here.
+  - type: input
+    id: version
+    attributes:
+      label: Version or commit
+      description: The release tag or commit you are using.
+      placeholder: v0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: OS, and the Python or Node version.
+      placeholder: Ubuntu 24.04, Python 3.12.4
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: The smallest code or command that shows the problem. If it reproduces against the mock server from uncensored-ai-api, say so.
+      render: text
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior
+      description: Include the HTTP status and the full error body if an API error is involved (the `type`, and `request_id` when present).
+    validations:
+      required: true
+  - type: input
+    id: model
+    attributes:
+      label: Model id and streaming
+      placeholder: glm-5.3-flash, streaming

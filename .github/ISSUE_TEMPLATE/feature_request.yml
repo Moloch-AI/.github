@@ -1,0 +1,27 @@
+name: Feature request
+description: Suggest an improvement to this repository.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Features must be backed by what the API actually supports (see https://molochai.dev/docs/openai-compatibility).
+        If the API itself is missing something, tell us at https://molochai.dev/contact instead.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and what gets in the way today?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Proposed solution
+      description: What would you like to happen? Code sketches are welcome.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
