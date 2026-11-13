@@ -60,7 +60,7 @@ representative at an online or offline event.
 
 Instances of abusive, harassing, or otherwise unacceptable behavior may be
 reported to the community leaders responsible for enforcement through the
-options on [molochai.dev/contact](https://molochai.dev/contact), or with
+options on [molochai.dev/contact](https://molochai.dev/contact?utm_source=github&utm_medium=oss&utm_campaign=org-profile), or with
 GitHub's **Report content** option on the comment, issue or pull request
 concerned. All complaints will be reviewed and investigated promptly and fairly.
 

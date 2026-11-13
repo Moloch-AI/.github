@@ -14,11 +14,11 @@ We will acknowledge the report, keep you updated while we work on a fix, and cre
 
 ## Reporting a problem with the hosted API or dashboard
 
-Security issues in the MolochAI service itself (`api.molochai.dev`, `dash.molochai.dev`, `molochai.dev`) are not in these repositories. Report them through [molochai.dev/contact](https://molochai.dev/contact).
+Security issues in the MolochAI service itself (`api.molochai.dev`, `dash.molochai.dev`, `molochai.dev`) are not in these repositories. Report them through [molochai.dev/contact](https://molochai.dev/contact?utm_source=github&utm_medium=oss&utm_campaign=org-profile).
 
 ## If an API key leaks
 
-Revoke it right away in the [dashboard](https://dash.molochai.dev/account) under **API keys**, then create a new one. Revoking takes effect immediately. A MolochAI key is not scoped: whoever holds it can spend your quota and read your account details through the API. Never include a key in an issue, a log excerpt, a screenshot or a report, including a private one.
+Revoke it right away in the [dashboard](https://dash.molochai.dev/account?utm_source=github&utm_medium=oss&utm_campaign=org-profile) under **API keys**, then create a new one. Revoking takes effect immediately. A MolochAI key is not scoped: whoever holds it can spend your quota and read your account details through the API. Never include a key in an issue, a log excerpt, a screenshot or a report, including a private one.
 
 ## Supported versions
 

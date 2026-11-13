@@ -6,7 +6,7 @@ body:
     attributes:
       value: |
         Thanks for reporting. **Never paste an API key**, and redact prompts you do not want public.
-        Problems with your account, billing or the hosted API belong at https://molochai.dev/contact, not here.
+        Problems with your account, billing or the hosted API belong at https://molochai.dev/contact?utm_source=github&utm_medium=oss&utm_campaign=org-profile, not here.
   - type: input
     id: version
     attributes:

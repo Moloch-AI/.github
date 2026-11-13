@@ -5,8 +5,8 @@ body:
   - type: markdown
     attributes:
       value: |
-        Features must be backed by what the API actually supports (see https://molochai.dev/docs/openai-compatibility).
-        If the API itself is missing something, tell us at https://molochai.dev/contact instead.
+        Features must be backed by what the API actually supports (see https://molochai.dev/docs/openai-compatibility?utm_source=github&utm_medium=oss&utm_campaign=org-profile).
+        If the API itself is missing something, tell us at https://molochai.dev/contact?utm_source=github&utm_medium=oss&utm_campaign=org-profile instead.
   - type: textarea
     id: problem
     attributes:

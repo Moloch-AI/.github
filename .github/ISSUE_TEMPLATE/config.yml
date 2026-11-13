@@ -1,10 +1,10 @@
 blank_issues_enabled: true
 contact_links:
   - name: Account, billing or hosted API problem
-    url: https://molochai.dev/contact
+    url: https://molochai.dev/contact?utm_source=github&utm_medium=oss&utm_campaign=org-profile
     about: Support for your MolochAI account and the hosted API runs through the dashboard, not GitHub issues.
   - name: API documentation
-    url: https://molochai.dev/docs
+    url: https://molochai.dev/docs?utm_source=github&utm_medium=oss&utm_campaign=org-profile
     about: Parameters, streaming, errors and limits.
   - name: Security vulnerability
     url: https://github.com/Moloch-AI/.github/blob/main/SECURITY.md
